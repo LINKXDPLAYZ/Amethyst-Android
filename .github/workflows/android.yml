@@ -88,3 +88,9 @@ jobs:
       - name: Gen md5sums
         run: |
           md5sum out/app-debug.apk > out/app-debug.md5
+          
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+         name: app-debug
+         path: out/app-debug.*
